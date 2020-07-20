@@ -9,7 +9,7 @@ Description...
 * ES6
 * JSON
 * CSS, Sass
-* Webpack, Gulp
+* Webpack
 
 ## Futures
 
@@ -20,5 +20,5 @@ App demo...
 * clone repository
 
 ## ToDo
-* web layout
+* app layout
 * CSS style

@@ -5,11 +5,13 @@ const Header = () => {
         <>
             <header className="header">
                 <div className="header--container">
-                    <img src="./../../assets/img/olx_logo.png" alt="Logo OLX" title="Ogłoszenia - Sprzedam, kupię na OLX.pl" />
+                    <a href="/">
+                        <img src="./../../assets/img/olx_logo.png" alt="Logo OLX" title="Ogłoszenia - Sprzedam, kupię na OLX.pl" />
+                    </a>
                     <div className="header--container__wrapper">
                         <ul>
                             <li>
-                                <a href="/">
+                                <a href="/" title="Obserwowane">
                                     <i className="far fa-heart"></i>
                                 </a>
                             </li>

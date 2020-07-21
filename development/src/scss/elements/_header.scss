@@ -30,10 +30,10 @@
                         justify-content: center;
                         align-items: center;
                         i {
-                            font-size: 1.5em;
+                            font-size: 1.4em;
                         }
                         span {
-                            margin-left: 8px;
+                            margin-left: 10px;
                             display: none;
                             @include desktop {
                                 display: inline-block;
@@ -47,6 +47,7 @@
                 padding: 13px 22px;
                 background-color: $custom-white-color;
                 color: $dark-blue-color;
+                line-height: 20px;
                 border-radius: 4px;
                 -webkit-border-radius: 4px;
                 -moz-border-radius: 4px;

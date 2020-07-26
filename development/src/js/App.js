@@ -10,6 +10,9 @@ import Headers from "./components/Header";
 import Heading from "./components/Heading";
 import Search from "./components/Search";
 import Navigation from "./components/Navigation";
+import Main from "./components/Main";
+import Top from "./components/Top";
+import Shops from "./components/Shops";
 
 const App = () => {
     return (
@@ -21,9 +24,9 @@ const App = () => {
             <Router>
                 <>
                     <Switch>
-                        {/* <Route exact path="/" component={Main} /> */}
-                        {/* <Route path="/top" component={Top} /> */}
-                        {/* <Route path="/sklepy" component={Shops} /> */}
+                        <Route exact path="/" component={Main} />
+                        <Route path="/top" component={Top} />
+                        <Route path="/sklepy" component={Shops} />
                     </Switch>
                 </>
             </Router>

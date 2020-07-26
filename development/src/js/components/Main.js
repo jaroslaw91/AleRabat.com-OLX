@@ -3,7 +3,9 @@ import React from "react";
 const Main = () => {
     return (
         <>
-            Main
+            <div className="main">
+                Main
+            </div>
         </>
     );
 }

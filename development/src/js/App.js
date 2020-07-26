@@ -13,6 +13,7 @@ import Navigation from "./components/Navigation";
 import Main from "./components/Main";
 import Top from "./components/Top";
 import Shops from "./components/Shops";
+import Footer from "./components/Footer";
 
 const App = () => {
     return (
@@ -30,6 +31,7 @@ const App = () => {
                     </Switch>
                 </>
             </Router>
+            <Footer />
         </>
     );
 }

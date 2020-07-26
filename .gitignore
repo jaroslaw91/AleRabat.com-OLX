@@ -14,5 +14,3 @@ node_modules/
 .test/
 .solutions/
 ToDo.txt
-development/assets/fonts
-development/src/css

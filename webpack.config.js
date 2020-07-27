@@ -1,6 +1,7 @@
 const path = require("path");
 const entryPath = "development";
 const entryFile = "src/js/App.js";
+const Dotenv = require('dotenv-webpack');
 module.exports = {
     entry: ["whatwg-fetch", `./${entryPath}/${entryFile}`],
     output: {
@@ -27,4 +28,7 @@ module.exports = {
             }
         ],
     },
+    plugins: [
+        new Dotenv()
+    ]
 };

@@ -13,4 +13,5 @@ node_modules/
 .idea/
 .test/
 .solutions/
+.env
 ToDo.txt

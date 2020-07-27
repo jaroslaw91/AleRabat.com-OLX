@@ -4,7 +4,9 @@ const Main = () => {
     return (
         <>
             <div className="main">
-                Main
+                <div className="main--container">
+                    <h2>Najpopularniejsze sklepy</h2>
+                </div>
             </div>
         </>
     );

@@ -13,9 +13,12 @@ import Navigation from "./components/Navigation";
 import Main from "./components/Main";
 import Top from "./components/Top";
 import Shops from "./components/Shops";
+import Shop from "./components/Shop";
 import Footer from "./components/Footer";
 
-const App = ({ shops }) => {
+const DB_URL = `http://localhost:3005/`;
+
+const App = () => {
     const [token, setToken] = useState();
 
     useEffect(() => {
@@ -37,17 +40,18 @@ const App = ({ shops }) => {
             <Headers />
             <Heading />
             <Search />
-            <Navigation />
+            <Navigation DB_URL={DB_URL} />
             <Router>
                 <>
                     <Switch>
                         <Route exact path="/" component={Main} />
                         <Route path="/top" component={Top} />
-                        <Route path="/sklepy" component={() => <Shops token={token} />} />
+                        <Route path="/sklepy" component={() => <Shops token={token} DB_URL={DB_URL} />} />
+                        <Route path="/kody-promocyjne/:shop" component={() => <Shop token={token} />} />
                     </Switch>
                 </>
             </Router>
-            <Footer />
+            <Footer DB_URL={DB_URL} />
         </>
     );
 }

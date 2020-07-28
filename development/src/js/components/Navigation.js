@@ -1,34 +1,37 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import {
     HashRouter as Router,
     NavLink
 } from "react-router-dom";
 
-const Navigation = () => {
+const Navigation = ({ DB_URL }) => {
+    const [nav, setNav] = useState([]);
+
+    useEffect(() => {
+        fetch(DB_URL + "navigation")
+            .then(res => res.json())
+            .then(data => setNav(data))
+            .catch(error => console.log(error));
+    }, []);
+
     return (
         <>
             <div className="navigation">
                 <div className="navigation--mobile">
                     <select>
-                        <option>Strona główna</option>
-                        <option>Top20</option>
-                        <option>Sklepy</option>
+                        {nav?.map(e => (
+                            <option key={e.id}>{e.name}</option>
+                        ))}
                     </select>
                 </div>
                 <div className="navigation--desktop">
                     <ul>
                         <Router>
-                            <NavLink exact to="/" activeClassName="nav-active">
-                                <li className="nav-disabled">Strona główna</li>
-                            </NavLink>
-
-                            <NavLink to="/top" activeClassName="nav-active">
-                                <li className="nav-disabled">Top20</li>
-                            </NavLink>
-
-                            <NavLink to="/sklepy" activeClassName="nav-active">
-                                <li className="nav-disabled">Sklepy</li>
-                            </NavLink>
+                            {nav?.map(e => (
+                                <NavLink key={e.id} exact to={e.url} activeClassName="nav-active">
+                                    <li className="nav-disabled">{e.name}</li>
+                                </NavLink>
+                            ))}
                         </Router>
                     </ul>
                 </div>

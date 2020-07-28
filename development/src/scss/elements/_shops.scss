@@ -36,7 +36,7 @@
                 height: 41px;
                 background-color: $custom-white-color;
                 border: solid 1px $tranparent-gray-color;
-                color: $light-black-color;
+                color: $dark-gray-color;
                 font-size: 1.286em;
                 font-weight: 700;
                 display: flex;
@@ -75,12 +75,30 @@
                 align-items: center;
             }
             ul {
-                
+               @include notebook {
+                    display: flex;
+                    flex-wrap: wrap;
+               }
+               @include desktop {
+                    display: flex;
+                    flex-wrap: wrap;
+               }
                 li {
                     margin: 3px 12px 4px 0;
-                    height: 25px;
+                    height: 25px;      
+                    color: $dark-gray-color;
                     font-size: 1.143em;
                     font-weight: 500;
+                    display: block;
+                    &:hover {
+                        text-decoration: underline;
+                    }
+                    @include notebook {
+                        width: 300px;
+                    }
+                    @include desktop {
+                        width: 297px;
+                    }
                 }
             }
         }

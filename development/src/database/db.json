@@ -1,0 +1,235 @@
+{
+    "navigation": [
+        {
+            "id": 1,
+            "name": "Strona główna",
+            "url": "/"
+        },
+        {
+            "id": 2,
+            "name": "Top20",
+            "url": "/top"
+        },
+        {
+            "id": 3,
+            "name": "Sklepy",
+            "url": "/sklepy"
+        }
+    ],
+    "footer": {
+        "part1": [
+            {
+                "id": 1,
+                "name": "Aplikacje mobilne OLX.pl",
+                "url": "https://www.olx.pl/lp/mobilne/"
+            },
+            {
+                "id": 2,
+                "name": "Pomoc",
+                "url": "https://pomoc.olx.pl/hc/pl"
+            },
+            {
+                "id": 3,
+                "name": "Wyróżnione ogłoszenia",
+                "url": "https://www.olx.pl/pakiety-promowan/"
+            },
+            {
+                "id": 4,
+                "name": "Blog",
+                "url": "https://blog.olx.pl/"
+            },
+            {
+                "id": 5,
+                "name": "Regulamin",
+                "url": "https://pomoc.olx.pl/hc/pl/articles/360000828525"
+            },
+            {
+                "id": 6,
+                "name": "Polityka prywatności",
+                "url": "https://pomoc.olx.pl/hc/pl/articles/360000901525"
+            },
+            {
+                "id": 7,
+                "name": "Reklama",
+                "url": "https://tu-dodasz-reklame.olx.pl/"
+            },
+            {
+                "id": 8,
+                "name": "Biuro prasowe",
+                "url": "https://media.olx.pl/"
+            }
+        ],
+        "part2": [
+            {
+                "id": 1,
+                "name": "Jak działa OLX.pl",
+                "url": "https://www.olx.pl/jak-dziala-olx/"
+            },
+            {
+                "id": 2,
+                "name": "Zasady bezpieczeństwa",
+                "url": "https://www.olx.pl/bezpieczenstwo/"
+            },
+            {
+                "id": 3,
+                "name": "Mapa kategorii",
+                "url": "https://www.olx.pl/sitemap/"
+            },
+            {
+                "id": 4,
+                "name": "Mapa miejscowości",
+                "url": "https://www.olx.pl/sitemap/regions/"
+            },
+            {
+                "id": 5,
+                "name": "Popularne wyszukiwania",
+                "url": "https://www.olx.pl/popularne/"
+            },
+            {
+                "id": 6,
+                "name": "Kariera",
+                "url": "https://www.olxgroup.com/careers"
+            },
+            {
+                "id": 7,
+                "name": "Preferencje reklamowe",
+                "url": "https://www.olx.pl/"
+            }
+        ],
+        "social": [
+            {
+                "id": 1,
+                "class": "fab fa-facebook",
+                "url": "https://www.facebook.com/olx.polska/"
+            },
+            {
+                "id": 2,
+                "class": "fab fa-instagram",
+                "url": "https://www.instagram.com/olxpolska/"
+            },
+            {
+                "id": 3,
+                "class": "fab fa-youtube",
+                "url": "https://www.youtube.com/channel/UCGr18y85p6zXQwBev6CGwow"
+            }
+        ],
+        "mobileapp": [
+            {
+                "id": 1,
+                "img": "./../../assets/img/app-store-badge.png",
+                "url": "https://apps.apple.com/pl/app/olx-pl-darmowe-og-oszenia/id531717763?l=pl&ls=1"
+            },
+            {
+                "id": 2,
+                "img": "./../../assets/img/google-play-badge.png",
+                "url": "https://play.google.com/store/apps/details?id=pl.tablica&referrer=utm_source%3Dolx.pl%26utm_medium%3Dcpc%26utm_campaign%3Dandroid-app-footer"
+            }
+        ]
+    },
+    "sort": [
+        {
+            "id": 1,
+            "name": "0-9"
+        },
+        {
+            "id": 2,
+            "name": "A"
+        },
+        {
+            "id": 3,
+            "name": "B"
+        },
+        {
+            "id": 4,
+            "name": "C"
+        },
+        {
+            "id": 5,
+            "name": "D"
+        },
+        {
+            "id": 6,
+            "name": "E"
+        },
+        {
+            "id": 7,
+            "name": "F"
+        },
+        {
+            "id": 8,
+            "name": "G"
+        },
+        {
+            "id": 9,
+            "name": "H"
+        },
+        {
+            "id": 10,
+            "name": "I"
+        },
+        {
+            "id": 11,
+            "name": "J"
+        },
+        {
+            "id": 12,
+            "name": "K"
+        },
+        {
+            "id": 13,
+            "name": "L"
+        },
+        {
+            "id": 14,
+            "name": "M"
+        },
+        {
+            "id": 15,
+            "name": "N"
+        },
+        {
+            "id": 16,
+            "name": "O"
+        },
+        {
+            "id": 17,
+            "name": "P"
+        },
+        {
+            "id": 18,
+            "name": "Q"
+        },
+        {
+            "id": 19,
+            "name": "R"
+        },
+        {
+            "id": 20,
+            "name": "S"
+        },
+        {
+            "id": 21,
+            "name": "T"
+        },
+        {
+            "id": 22,
+            "name": "V"
+        },
+        {
+            "id": 23,
+            "name": "W"
+        },
+        {
+            "id": 24,
+            "name": "X"
+        },
+        {
+            "id": 25,
+            "name": "Y"
+        },
+        {
+            "id": 26,
+            "name": "Z"
+        }
+    ]
+}

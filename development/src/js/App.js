@@ -9,7 +9,7 @@ import "./../scss/main.scss";
 import Headers from "./components/Header";
 import Heading from "./components/Heading";
 import Search from "./components/Search";
-import Navigation from "./components/Navigation";
+import Nav from "./components/Nav";
 import Main from "./components/Main";
 import Top from "./components/Top";
 import Shops from "./components/Shops";
@@ -40,7 +40,7 @@ const App = () => {
             <Headers />
             <Heading />
             <Search />
-            <Navigation DB_URL={DB_URL} />
+            <Nav DB_URL={DB_URL} />
             <Router>
                 <>
                     <Switch>

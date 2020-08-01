@@ -1,42 +1,27 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import {
     HashRouter as Router,
     NavLink
 } from "react-router-dom";
+import { Link } from "react-scroll";
 
-const Shops = ({ token, DB_URL }) => {
-    const [sort, setSort] = useState([]);
-    const [shops, setShops] = useState([]);
-
-    useEffect(() => {
-        if (token) {
-            fetch(process.env.DB_HOST + "shops", {
-                headers: {
-                    "Authorization": "Bearer " + token,
-                    "Content-Type": "application/json"
-                }
-            })
-                .then(res => res.json())
-                .then(data => setShops(data))
-                .catch(error => console.log(error));
-        }
-        fetch(DB_URL + "sort")
-            .then(res => res.json())
-            .then(data => setSort(data))
-            .catch(error => console.log(error));
-    }, []);
-
+const Shops = ({ letters, shops }) => {
     return (
         <>
             <div className="shops">
                 <div className="shops--container">
                     <h2>Wszystkie sklepy</h2>
                     <div className="shops--container__sort">
-                        {sort?.map(e => <span key={e.id}>{e.name}</span>)}
+                        {letters?.map(e =>
+                            < Link key={e.id} to={"/sklepy/" + e.name} spy={true} smooth={true} offset={- 100} duration={500}>
+                                <span>{e.name}</span>
+                            </Link>
+                        )}
                     </div>
-                    {sort?.map(e => (
+
+                    {letters?.map(e => (
                         e.name.charAt(0) === "0" ?
-                            <div key={e.id} className="shops--container__box">
+                            <div key={e.id} className="shops--container__box" id={"/sklepy/" + e.name}>
                                 <h3>{e.name}</h3>
                                 <ul>
                                     <Router>
@@ -49,8 +34,8 @@ const Shops = ({ token, DB_URL }) => {
                                     </Router>
                                 </ul>
                             </div>
-                            : <div key={e.id
-                            } className="shops--container__box" >
+                            :
+                            <div className="shops--container__box" key={e.id} id={"/sklepy/" + e.name}>
                                 <h3>{e.name}</h3>
                                 <ul>
                                     <Router>

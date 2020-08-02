@@ -10,9 +10,6 @@ const Shop = ({ token, shops }) => {
     const [vouchers, setVouchers] = useState([]);
 
     const shopName = shops.filter(e => e.name === shop);
-    // if (!shopName[0]) {
-    //     return null;
-    // }
     const shopId = shopName[0].id;
 
     const dateNow = new Date();
@@ -106,8 +103,7 @@ const Shop = ({ token, shops }) => {
 
                                             {m.finishDate ?
                                                 <p>
-                                                    <i className="fas fa-clock" />
-                                                    {Math.abs(Math.ceil(dateNow.getTime() - dateEnd.getTime(vouchers.finishDate) / (60 * 60 * 24 * 1000)) % 365)} dni
+                                                    <i className="fas fa-clock" /> {Math.abs(Math.ceil(dateNow.getTime() - dateEnd.getTime(vouchers.finishDate) / (60 * 60 * 24 * 1000)) % 365)} dni
                                                 </p>
                                                 : <p><i className="fas fa-clock" /> Do odwołania</p>}
                                         </>

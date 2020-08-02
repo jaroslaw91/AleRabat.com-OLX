@@ -15,32 +15,30 @@ const Nav = ({ DB_URL }) => {
     }, []);
 
     return (
-        <>
-            <div className="navigation">
-                <div className="navigation--mobile">
-                    <nav>
-                        <select>
-                            {nav?.map(e => (
-                                <option key={e.id}>{e.name}</option>
-                            ))}
-                        </select>
-                    </nav>
-                </div>
-                <div className="navigation--desktop">
-                    <nav>
-                        <ul>
-                            <Router>
-                                {nav?.map(e => (
-                                    <NavLink key={e.id} exact to={e.url} activeClassName="nav-active">
-                                        <li className="nav-disabled">{e.name}</li>
-                                    </NavLink>
-                                ))}
-                            </Router>
-                        </ul>
-                    </nav>
-                </div>
+        <div className="navigation">
+            <div className="navigation--mobile">
+                <nav>
+                    <select>
+                        {nav?.map(e => (
+                            <option key={e.id}>{e.name}</option>
+                        ))}
+                    </select>
+                </nav>
             </div>
-        </>
+            <div className="navigation--desktop">
+                <nav>
+                    <ul>
+                        <Router>
+                            {nav?.map(e => (
+                                <NavLink key={e.id} exact to={e.url} activeClassName="nav-active">
+                                    <li className="nav-disabled">{e.name}</li>
+                                </NavLink>
+                            ))}
+                        </Router>
+                    </ul>
+                </nav>
+            </div>
+        </div>
     );
 }
 

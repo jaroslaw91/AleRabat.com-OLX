@@ -14,7 +14,10 @@ const Shop = ({ token, shops }) => {
     //     return null;
     // }
     const shopId = shopName[0].id;
+
     const dateNow = new Date();
+    const dateEnd = new Date();
+
     const monthNames = [
         "Styczeń",
         "Luty",
@@ -58,12 +61,27 @@ const Shop = ({ token, shops }) => {
                             <img src={imgURL} alt={shop} />
                         </div>
                         <h3>{shop}</h3>
+                        <h3>Zobacz także kupony rabatowe i promocje w najpopularniejszych sklepach</h3>
+                        <div className="shops-logo-list" >
+                            <ul>
+                                <Router>
+                                    {shops?.map(m => (
+                                        <NavLink key={m.id} exact to={"/kody-promocyjne/" + m.name}>
+                                            <li key={m.id}>
+                                                <img src={"./../../assets/img/shops/" + m.id + ".webp"} alt={shop} />
+                                            </li>
+                                        </NavLink>
+                                    ))}
+                                </Router>
+
+                            </ul>
+                        </div>
                         <h3>Zobacz także kupony rabatowe i promocje w podobnych sklepach</h3>
                         <ul>
                             <Router>
                                 {shops?.map(m => (
                                     <NavLink key={m.id} exact to={"/kody-promocyjne/" + m.name}>
-                                        <li>{m.name}</li>
+                                        <li className="shops-list">{m.name}</li>
                                     </NavLink>
                                 ))}
                             </Router>
@@ -80,15 +98,18 @@ const Shop = ({ token, shops }) => {
                                     </div>
                                     <div className="voucher-time">
                                         <>
-                                            {m.offerTypeName === "offer" ? <p>Promocja</p> : m.offerTypeName === "discount code" ? <p>Kod rabatowy</p> : <p>Darmowa wysyłka</p>}
+                                            {m.offerTypeName === "offer"
+                                                ? <p>Promocja</p>
+                                                : m.offerTypeName === "discount code"
+                                                    ? <p>Kod rabatowy</p>
+                                                    : <p>Darmowa wysyłka</p>}
 
                                             {m.finishDate ?
                                                 <p>
-                                                    <i className="fas fa-clock" /> 2 dni
+                                                    <i className="fas fa-clock" />
+                                                    {Math.abs(Math.ceil(dateNow.getTime() - dateEnd.getTime(vouchers.finishDate) / (60 * 60 * 24 * 1000)) % 365)} dni
                                                 </p>
-                                                : <p>
-                                                    <i className="fas fa-clock" /> Do odwołania
-                                                </p>}
+                                                : <p><i className="fas fa-clock" /> Do odwołania</p>}
                                         </>
                                     </div>
                                     <div className="voucher-info">

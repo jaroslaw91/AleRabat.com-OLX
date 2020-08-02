@@ -57,7 +57,34 @@
                         }
                     }
                 }
-                li {
+                .shops-logo-list {
+                    padding-bottom: 20px;
+                    width: 100%;
+                    ul {
+                        display: flex;
+                        justify-content: space-between;
+                        align-self: flex-start;
+                        flex-wrap: wrap;
+                        li {
+                            margin-bottom: 10px;
+                            padding: 10px 20px;
+                            width: 188px;
+                            height: 58px;
+                            color: $custom-gray-color;
+                            font-size: 0.857em;
+                            text-align: center;
+                            border: 1px solid $tranparent-gray-color;
+                            border-radius: 4px;
+                            &:hover {
+                                text-decoration: underline;
+                            }
+                            img {
+                                width: 132px;
+                            }
+                        }
+                    }
+                }
+                .shops-list {
                     margin-bottom: 5px;
                     padding: 12px 13px;
                     color: $custom-gray-color;

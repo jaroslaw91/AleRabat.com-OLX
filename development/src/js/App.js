@@ -66,7 +66,7 @@ const App = () => {
                 setState({
                     token,
                     letters,
-                    shops: shops.filter(f => f.id === 1982 || f.id === 1991 || f.id === 1992 || f.id === 2002 || f.id === 5902 || f.id === 3096 || f.id === 2046 || f.id === 2052 || f.id === 3412 || f.id === 3486 || f.id === 2124 || f.id === 4444 || f.id === 2342 || f.id === 2346 || f.id === 2370 || f.id === 2379 || f.id === 2473 || f.id === 2740 || f.id === 2951 || f.id === 2782),
+                    shops: shops.filter(f => f.id === 1982 || f.id === 1991 || f.id === 1992 || f.id === 2002 || f.id === 5902 || f.id === 3096 || f.id === 2046 || f.id === 2052 || f.id === 3412 || f.id === 3486 || f.id === 2124 || f.id === 4444 || f.id === 2342 || f.id === 2346 || f.id === 2370 || f.id === 2379 || f.id === 2473 || f.id === 2740 || f.id === 2951 || f.id === 2782 || f.id === 5562)
                 })
             })
             .catch(error => console.log(error));

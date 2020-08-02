@@ -1,5 +1,9 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
+import {
+    HashRouter as Router,
+    NavLink
+} from "react-router-dom";
 
 const Shop = ({ token, shops }) => {
     const { shop } = useParams();
@@ -42,31 +46,66 @@ const Shop = ({ token, shops }) => {
         }
     }, []);
 
-    return (
-        <>
-            <div className="shop">
-                <div className="shop--container">
-                    <h2>Kod rabatowy {shop} &#9702; {monthNames[dateNow.getMonth()]} {dateNow.getFullYear()}</h2>
-                    <div className="shop--container__shop">
-                        <div className="shop--container__shop-info">
-                            <div>
-                                <img src={imgURL} alt={shop} />
-                            </div>
-                            <h3>{shop}</h3>
-                        </div>
+    console.log(vouchers);
 
-                        <div className="shop--container__shop-vouchers">
-                            {vouchers?.map(m => (
-                                <div key={m.id}>
-                                    <img src={imgURL} alt={shop} />
-                                    {m.shopName}
-                                </div>
-                            ))}
+    return (
+        <div className="shop">
+            <div className="shop--container">
+                <h2>Kod rabatowy {shop} &#9702; {monthNames[dateNow.getMonth()]} {dateNow.getFullYear()}</h2>
+                <div className="shop--container__shop">
+                    <div className="shop--container__shop-info">
+                        <div className="shop-logo">
+                            <img src={imgURL} alt={shop} />
                         </div>
+                        <h3>{shop}</h3>
+                        <h3>Zobacz także kupony rabatowe i promocje w podobnych sklepach</h3>
+                        <ul>
+                            <Router>
+                                {shops?.map(m => (
+                                    <NavLink key={m.id} exact to={"/kody-promocyjne/" + m.name}>
+                                        <li>{m.name}</li>
+                                    </NavLink>
+                                ))}
+                            </Router>
+
+                        </ul>
+                    </div>
+
+                    <div className="shop--container__shop-vouchers">
+                        {vouchers.length
+                            ? vouchers?.map(m => (
+                                <article key={m.id} className="voucher">
+                                    <div className="voucher-logo">
+                                        <img src={imgURL} alt={shop} />
+                                    </div>
+                                    <div className="voucher-time">
+                                        <>
+                                            {m.offerTypeName === "offer" ? <p>Promocja</p> : m.offerTypeName === "discount code" ? <p>Kod rabatowy</p> : <p>Darmowa wysyłka</p>}
+
+                                            {m.finishDate ?
+                                                <p>
+                                                    <i className="fas fa-clock" /> 2 dni
+                                                </p>
+                                                : <p>
+                                                    <i className="fas fa-clock" /> Do odwołania
+                                                </p>}
+                                        </>
+                                    </div>
+                                    <div className="voucher-info">
+                                        <h3>{m.title}</h3>
+                                        <p>{m.description}</p>
+                                    </div>
+                                    <div className="voucher-btn">
+                                        {m.code ? <a href={m.directLink}>Pokaż kod</a> : <a href={m.directLink} target="blank">Przejdź do promocji</a>}
+                                        <span><i className="fas fa-heart"></i></span>
+                                    </div>
+                                </article>
+                            ))
+                            : <p>Brak kuponów</p>}
                     </div>
                 </div>
             </div>
-        </>
+        </div>
     );
 }
 

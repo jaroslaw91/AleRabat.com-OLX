@@ -22,53 +22,155 @@
         &__shop {
             width: 100%;
             display: flex;
-            justify-content: space-between;
-            align-items: flex-start;
-            flex-wrap: wrap;
-            &-info {
-                margin-right: 10px;
-                width: calc(33.3% - 10px);
-                &::after {
-                    content: "";
-                    width: 100%;
-                    height: 1px;
-                    background-color: $tranparent-gray-color-hr;
-                    display: block;
-                }
-                div {
-                    width: 100%;
-                    margin-bottom: 26px;
-                    height: 112px;
-                    display: flex;
-                    justify-content: center;
-                    align-items: center;
-                }
+            align-content: flex-start;
+            &-info {         
+             margin-right: 10px;
+             width: calc(33.3% - 10px);
+             .shop-logo {
+                width: 100%;
+                margin-bottom: 26px;
+                height: 112px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+            @include mobile {
+                display: none;
+            }
+            @include tablet {
+                display: none;
+            }
+            @include notebook {
+                display: none;
+            }
                 h3 {
                     margin-bottom: 20px;
                     font-size: 1.286em;  
+                    &:first-of-type {
+                        &::after {
+                            content: "";
+                            margin: 20px 0;
+                            width: 100%;
+                            height: 1px;
+                            background-color: $tranparent-gray-color-hr;
+                            display: block;
+                        }
+                    }
+                }
+                li {
+                    margin-bottom: 5px;
+                    padding: 12px 13px;
+                    color: $custom-gray-color;
+                    font-size: 0.857em;
+                    border: 1px solid $tranparent-gray-color;
+                    border-radius: 4px;
+                    &:hover {
+                        text-decoration: underline;
+                    }
                 }
             }
             &-vouchers {
                 width: 66.6%;
+                height: 200px;
                 display: flex;
                 justify-content: space-between;
-                align-items: flex-start;
+                align-items: stretch;
                 flex-wrap: wrap;
-                div {
+                @include mobile {
+                    width: 100%;
+                    justify-content: center;
+                }
+                @include tablet {
+                    width: 100%;
+                    justify-content: center;
+                }
+                @include notebook {
+                    width: 100%;
+                    justify-content: center;
+                }
+                .voucher {
                     margin: 10px;
                     margin-bottom: 26px;
                     width: calc(50% - 20px);
-                    height: 112px;
+                    background-color: $custom-white-color;
                     border: 1px solid $tranparent-gray-color;
                     border-radius: 6px;
                     display: flex;
-                    justify-content: center;
-                    align-items: center;
+                    justify-content: flex-start;
+                    align-items: flex-start;
                     flex-direction: column;
-                }
-                h3 {
-                    margin-bottom: 20px;
-                    font-size: 1.286em;  
+                    @include mobile {
+                        width: 100%;
+                     }
+                    @include tablet {
+                        width: 100%;
+                    }
+                    &-logo {
+                        padding: 30px;
+                        width: 100%;
+                        border-bottom: 1px solid $tranparent-gray-color;
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                    }
+                    &-time {
+                        padding: 13px 20px;
+                        width: 100%;
+                        color: $custom-gray-color;
+                        font-weight: 800;
+                        display: flex;
+                        justify-content: space-between;
+                        align-content: center;
+                    }
+                    &-info {
+                        padding: 0 20px;
+                        width: 100%;
+                        h3 {
+                            font-size: 1em;  
+                            font-weight: 600;
+                        }
+                        p {
+                            margin: 13px 0 8px 0;
+                            font-size: 0.857em;
+                            font-weight: 400;
+                        }
+                    }
+                    &-btn {
+                        padding: 20px 20px;
+                        width: 100%;
+                        font-size: 1em;
+                        font-weight: 600;
+                        display: flex;
+                        justify-content: space-between;
+                        align-content: center;
+                        a {
+                            margin-right: 10px;
+                            padding: 12px 18px;
+                            width: 100%;
+                            height: 40px;
+                            background-color: $custom-blue-color;
+                            color: $custom-white-color;
+                            text-align: center;
+                            border-radius: 4px;         
+                        }
+                        span {
+                            padding: 12px 18px;
+                            height: 40px;
+                            background-color: $dark-white-color;
+                            font-size: 1.5em;
+                            color: $custom-gray-color;
+                            text-align: center;
+                            border-radius: 4px;
+                            display: flex;
+                            justify-content: center;
+                            align-items: center;
+                            &:hover {
+                                cursor: pointer;
+                                background-color: $custom-blue-color;
+                                color: $custom-white-color;
+                            }
+                        }
+                    }
                 }
             }
         }

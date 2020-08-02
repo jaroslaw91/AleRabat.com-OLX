@@ -3,6 +3,7 @@
     padding-top: 45px;
     width: 100vw;
     height: 395px;
+    background-color: $custom-white-color;
     border-top: 1px solid $custom-gray-color;
     @include mobile {
         display: none;

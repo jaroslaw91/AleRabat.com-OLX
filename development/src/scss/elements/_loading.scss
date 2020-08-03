@@ -1,12 +1,8 @@
 .loading {
-    width: 100vw;
-    height: 100vh;
-    background-color: $dark-blue-color;
+    margin: 200px;
+    background-color: $custom-white-color;
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    img {
-        width: 70px;
-    }
 }

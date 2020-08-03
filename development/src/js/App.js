@@ -6,15 +6,11 @@ import {
     Route,
 } from "react-router-dom";
 import "./../scss/main.scss";
-import Loading from "./components/Loading";
 import Headers from "./components/Header";
 import Heading from "./components/Heading";
-import Searching from "./components/Searching";
+import Search from "./components/Search";
 import Nav from "./components/Nav";
-import Main from "./components/Main";
-import Top from "./components/Top";
-import Shops from "./components/Shops";
-import Shop from "./components/Shop";
+import Content from "./components/Content";
 import Footer from "./components/Footer";
 
 const DB_URL = `http://localhost:3005/`;
@@ -23,8 +19,9 @@ const App = () => {
     const [state, setState] = useState({
         token: null,
         letters: [],
-        shops: []
+        shops: [],
     });
+    const [vouchers, setVouchers] = useState([]);
 
     useEffect(() => {
         fetchToken();
@@ -75,29 +72,21 @@ const App = () => {
                         || f.id === 2473 || f.id === 2740 || f.id === 2951
                         || f.id === 2782 || f.id === 5562 || f.id === 2985
                     ))
-                })
+                });
             })
             .catch(error => console.log(error));
     }
 
-    return state.shops.length ? (
+    return (
         <>
             <Headers />
-            <Heading shops={state.shops.length} />
-            <Searching shops={state.shops} />
+            <Heading shops={state.shops} />
+            <Search shops={state.shops} />
             <Nav DB_URL={DB_URL} />
-            <Router>
-                <Switch>
-                    <Route exact path="/" component={Main} />
-                    <Route path="/top" component={Top} />
-                    <Route path="/sklepy" component={() => <Shops letters={state.letters} shops={state.shops} />} />
-                    <Route path="/kody-promocyjne/:shop" component={() => <Shop token={state.token} shops={state.shops} />} />
-                </Switch>
-            </Router>
+            <Content token={state.token} shops={state.shops} letters={state.letters} />
             <Footer DB_URL={DB_URL} />
         </>
-    )
-        : <Loading />;
+    );
 }
 
 ReactDOM.render(

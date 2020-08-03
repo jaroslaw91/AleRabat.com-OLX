@@ -1,205 +1,188 @@
 .shop {
-    margin: 24px 0;
     width: 100%;
-    min-height: calc(100vh - 750px);
     display: flex;
-    justify-content: center;
-    align-items: flex-start;
-    &--container {
-        margin: 0 20px;
+    align-content: flex-start;
+    &--info {         
+     margin-right: 10px;
+     width: calc(33.3% - 10px);
+        &__logo {
         width: 100%;
-        @include notebook {
-            width: 981px;
-        }
-        @include desktop {
-            width: 1238px;
-        }
-        h2 {
-            margin: 14px 0 20px 0;
-            font-size: 1.714em;
-            font-weight: 700;
-        }
-        &__shop {
-            width: 100%;
-            display: flex;
-            align-content: flex-start;
-            &-info {         
-             margin-right: 10px;
-             width: calc(33.3% - 10px);
-             .shop-logo {
-                width: 100%;
-                margin-bottom: 26px;
-                height: 112px;
-                display: flex;
-                justify-content: center;
-                align-items: center;
-            }
-            @include mobile {
-                display: none;
-            }
-            @include tablet {
-                display: none;
-            }
-            @include notebook {
-                display: none;
-            }
-                h3 {
-                    margin-bottom: 20px;
-                    font-size: 1.286em;  
-                    &:first-of-type {
-                        &::after {
-                            content: "";
-                            margin: 20px 0;
-                            width: 100%;
-                            height: 1px;
-                            background-color: $tranparent-gray-color-hr;
-                            display: block;
-                        }
-                    }
-                }
-                .shops-logo-list {
-                    padding-bottom: 20px;
+        margin-bottom: 26px;
+        height: 112px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    @include mobile {
+        display: none;
+    }
+    @include tablet {
+        display: none;
+    }
+    @include notebook {
+        display: none;
+    }
+        h3 {
+            margin-bottom: 20px;
+            font-size: 1.286em;  
+            &:first-of-type {
+                &::after {
+                    content: "";
+                    margin: 20px 0;
                     width: 100%;
-                    ul {
-                        display: flex;
-                        justify-content: space-between;
-                        align-self: flex-start;
-                        flex-wrap: wrap;
-                        li {
-                            margin-bottom: 10px;
-                            padding: 10px 20px;
-                            width: 188px;
-                            height: 58px;
-                            color: $custom-gray-color;
-                            font-size: 0.857em;
-                            text-align: center;
-                            border: 1px solid $tranparent-gray-color;
-                            border-radius: 4px;
-                            &:hover {
-                                text-decoration: underline;
-                            }
-                            img {
-                                width: 132px;
-                            }
-                        }
-                    }
+                    height: 1px;
+                    background-color: $tranparent-gray-color-hr;
+                    display: block;
                 }
-                .shops-list {
-                    margin-bottom: 5px;
-                    padding: 12px 13px;
+            }
+        }
+        &__logo-list {
+            padding-bottom: 20px;
+            width: 100%;
+            ul {
+                display: flex;
+                justify-content: space-between;
+                align-self: flex-start;
+                flex-wrap: wrap;
+                li {
+                    margin-bottom: 10px;
+                    padding: 10px 20px;
+                    width: 188px;
+                    height: 58px;
                     color: $custom-gray-color;
                     font-size: 0.857em;
+                    text-align: center;
                     border: 1px solid $tranparent-gray-color;
                     border-radius: 4px;
                     &:hover {
                         text-decoration: underline;
                     }
+                    img {
+                        width: 132px;
+                    }
                 }
             }
-            &-vouchers {
-                width: 66.6%;
-                height: 200px;
+        }
+        &__shops-list {
+            margin-bottom: 5px;
+            padding: 12px 13px;
+            color: $custom-gray-color;
+            font-size: 0.857em;
+            border: 1px solid $tranparent-gray-color;
+            border-radius: 4px;
+            &:hover {
+                text-decoration: underline;
+            }
+        }
+    }
+    .vouchers {
+        width: 66.6%;
+        height: 200px;
+        display: flex;
+        justify-content: space-between;
+        align-items: stretch;
+        flex-wrap: wrap;
+        @include mobile {
+            width: 100%;
+            justify-content: center;
+        }
+        @include tablet {
+            width: 100%;
+            justify-content: center;
+        }
+        @include notebook {
+            width: 100%;
+            justify-content: center;
+        }
+        .vouchers--voucher {
+            margin: 10px;
+            margin-bottom: 26px;
+            width: calc(50% - 20px);
+            background-color: $custom-white-color;
+            border: 1px solid $tranparent-gray-color;
+            border-radius: 6px;
+            display: flex;
+            justify-content: flex-start;
+            align-items: flex-start;
+            flex-direction: column;
+            @include mobile {
+                width: 100%;
+             }
+            @include tablet {
+                width: 100%;
+            }
+            &__logo {
+                padding: 30px;
+                width: 100%;
+                border-bottom: 1px solid $tranparent-gray-color;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+            &__time {
+                padding: 13px 20px;
+                width: 100%;
+                color: $custom-gray-color;
+                font-weight: 800;
                 display: flex;
                 justify-content: space-between;
-                align-items: stretch;
-                flex-wrap: wrap;
-                @include mobile {
-                    width: 100%;
-                    justify-content: center;
+                align-content: center;
+            }
+            &__info {
+                padding: 0 20px;
+                width: 100%;
+                h3 {
+                    font-size: 1em;  
+                    font-weight: 600;
                 }
-                @include tablet {
-                    width: 100%;
-                    justify-content: center;
+                p {
+                    margin: 13px 0 8px 0;
+                    font-size: 0.857em;
+                    font-weight: 400;
                 }
-                @include notebook {
+            }
+            &__btn {
+                padding: 20px 20px;
+                width: 100%;
+                font-size: 1em;
+                font-weight: 600;
+                display: flex;
+                justify-content: space-between;
+                align-content: center;
+                a {
+                    margin-right: 10px;
+                    padding: 12px 18px;
                     width: 100%;
-                    justify-content: center;
+                    height: 40px;
+                    background-color: $custom-blue-color;
+                    color: $custom-white-color;
+                    text-align: center;
+                    border-radius: 4px;         
                 }
-                .voucher {
-                    margin: 10px;
-                    margin-bottom: 26px;
-                    width: calc(50% - 20px);
-                    background-color: $custom-white-color;
-                    border: 1px solid $tranparent-gray-color;
-                    border-radius: 6px;
+                span {
+                    padding: 12px 18px;
+                    height: 40px;
+                    background-color: $dark-white-color;
+                    font-size: 1.5em;
+                    color: $custom-gray-color;
+                    text-align: center;
+                    border-radius: 4px;
                     display: flex;
-                    justify-content: flex-start;
-                    align-items: flex-start;
-                    flex-direction: column;
-                    @include mobile {
-                        width: 100%;
-                     }
-                    @include tablet {
-                        width: 100%;
-                    }
-                    &-logo {
-                        padding: 30px;
-                        width: 100%;
-                        border-bottom: 1px solid $tranparent-gray-color;
-                        display: flex;
-                        justify-content: center;
-                        align-items: center;
-                    }
-                    &-time {
-                        padding: 13px 20px;
-                        width: 100%;
-                        color: $custom-gray-color;
-                        font-weight: 800;
-                        display: flex;
-                        justify-content: space-between;
-                        align-content: center;
-                    }
-                    &-info {
-                        padding: 0 20px;
-                        width: 100%;
-                        h3 {
-                            font-size: 1em;  
-                            font-weight: 600;
-                        }
-                        p {
-                            margin: 13px 0 8px 0;
-                            font-size: 0.857em;
-                            font-weight: 400;
-                        }
-                    }
-                    &-btn {
-                        padding: 20px 20px;
-                        width: 100%;
-                        font-size: 1em;
-                        font-weight: 600;
-                        display: flex;
-                        justify-content: space-between;
-                        align-content: center;
-                        a {
-                            margin-right: 10px;
-                            padding: 12px 18px;
-                            width: 100%;
-                            height: 40px;
-                            background-color: $custom-blue-color;
-                            color: $custom-white-color;
-                            text-align: center;
-                            border-radius: 4px;         
-                        }
-                        span {
-                            padding: 12px 18px;
-                            height: 40px;
-                            background-color: $dark-white-color;
-                            font-size: 1.5em;
-                            color: $custom-gray-color;
-                            text-align: center;
-                            border-radius: 4px;
-                            display: flex;
-                            justify-content: center;
-                            align-items: center;
-                            &:hover {
-                                cursor: pointer;
-                                background-color: $custom-blue-color;
-                                color: $custom-white-color;
-                            }
-                        }
+                    justify-content: center;
+                    align-items: center;
+                    &:hover {
+                        cursor: pointer;
+                        background-color: $custom-blue-color;
+                        color: $custom-white-color;
                     }
                 }
             }
+        }
+        .no-coupons {
+            margin: 100px;
+            width: 100%;
+            text-align: center;
+            font-weight: 600;
         }
     }
 }

@@ -1,106 +1,84 @@
-.shops {
-    margin: 24px 0;
-    width: 100%;
-    min-height: calc(100vh - 750px);
+.shops--sort {
     display: flex;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: flex-start;
-    &--container {
-        margin: 0 20px;
+    flex-wrap: wrap;
+    flex-direction: row;
+    &::before {
+        content: "";
+        display: none;
+    }
+    span {
+        margin: 0 26px 15px 26px;
+        padding-bottom: 5px;
+        width: 40px;
+        height: 41px;
+        background-color: $custom-white-color;
+        border: solid 1px $tranparent-gray-color;
+        color: $dark-gray-color;
+        font-size: 1.286em;
+        font-weight: 700;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        &:hover {
+            cursor: pointer;
+            background-color: $custom-blue-color;
+            border: solid 1px $custom-black-color;
+            color: $custom-white-color;
+            text-decoration: underline;
+        }
+    }
+}
+.shops--box {
+    padding: 9px 0;
+    &::before {
+        content: "";
         width: 100%;
-        @include notebook {
-            width: 981px;
-        }
-        @include desktop {
-            width: 1238px;
-        }
-        h2 {
-            margin: 14px 0 20px 0;
-            font-size: 1.714em;
-            font-weight: 700;
-        }
-        &__sort {
+        height: 1px;
+        background-color: $tranparent-gray-color-hr;
+        display: block;
+    }
+    h3 {
+        margin-top: 25px;
+        margin-bottom: 16px;
+        padding-bottom: 5px;
+        width: 40px;
+        height: 41px;
+        background-color: $custom-blue-color;
+        color: $custom-white-color;
+        font-size: 1.286em;
+        font-weight: 700;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    ul {
+       @include notebook {
             display: flex;
-            justify-content: flex-start;
-            align-items: flex-start;
             flex-wrap: wrap;
-            flex-direction: row;
-            &::before {
-                content: "";
-                display: none;
+       }
+       @include desktop {
+            display: flex;
+            flex-wrap: wrap;
+       }
+        li {
+            margin: 3px 12px 4px 0;
+            height: 25px;      
+            color: $dark-gray-color;
+            font-size: 1.143em;
+            font-weight: 500;
+            display: block;
+            &:hover {
+                text-decoration: underline;
             }
-            span {
-                margin: 0 26px 15px 26px;
-                padding-bottom: 5px;
-                width: 40px;
-                height: 41px;
-                background-color: $custom-white-color;
-                border: solid 1px $tranparent-gray-color;
-                color: $dark-gray-color;
-                font-size: 1.286em;
-                font-weight: 700;
-                display: flex;
-                justify-content: center;
-                align-items: center;
-                &:hover {
-                    cursor: pointer;
-                    background-color: $custom-blue-color;
-                    border: solid 1px $custom-black-color;
-                    color: $custom-white-color;
-                    text-decoration: underline;
-                }
+            @include notebook {
+                width: 300px;
             }
-        }
-        &__box {
-            padding: 9px 0;
-            &::before {
-                content: "";
-                width: 100%;
-                height: 1px;
-                background-color: $tranparent-gray-color-hr;
-                display: block;
-            }
-            h3 {
-                margin-top: 25px;
-                margin-bottom: 16px;
-                padding-bottom: 5px;
-                width: 40px;
-                height: 41px;
-                background-color: $custom-blue-color;
-                color: $custom-white-color;
-                font-size: 1.286em;
-                font-weight: 700;
-                display: flex;
-                justify-content: center;
-                align-items: center;
-            }
-            ul {
-               @include notebook {
-                    display: flex;
-                    flex-wrap: wrap;
-               }
-               @include desktop {
-                    display: flex;
-                    flex-wrap: wrap;
-               }
-                li {
-                    margin: 3px 12px 4px 0;
-                    height: 25px;      
-                    color: $dark-gray-color;
-                    font-size: 1.143em;
-                    font-weight: 500;
-                    display: block;
-                    &:hover {
-                        text-decoration: underline;
-                    }
-                    @include notebook {
-                        width: 300px;
-                    }
-                    @include desktop {
-                        width: 297px;
-                    }
-                }
+            @include desktop {
+                width: 297px;
             }
         }
     }
 }
+

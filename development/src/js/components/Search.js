@@ -6,7 +6,7 @@ import {
 
 const Searching = ({ shops }) => {
     const [shopList, setShopList] = useState([]);
-    const [searchValue, setSearchValue] = useState();
+    const [searchValue, setSearchValue] = useState([]);
     const [searchShop, setSearchShop] = useState([]);
 
     useEffect(() => {
@@ -18,8 +18,14 @@ const Searching = ({ shops }) => {
     }, [searchValue]);
 
     const handleOfSearch = e => {
-        setSearchValue(e.target.value);
+        const value = e.target.value;
+        setSearchValue(value);
     };
+
+    const onSearch = () => {
+        input.value = "";
+        setSearchValue("");
+    }
 
     return (
         <div className="search">
@@ -27,12 +33,12 @@ const Searching = ({ shops }) => {
                 <button type="submit">
                     <i className="fas fa-search"></i>
                 </button>
-                <input type="text" placeholder="np. eobuwie, Media Markt, adidas" value={searchValue} onChange={handleOfSearch} />
+                <input id="input" type="text" placeholder="np. eobuwie, Media Markt, adidas" value={searchValue} onChange={handleOfSearch} />
                 <ul>
                     <Router>
                         {searchShop.map(shop => (
                             searchValue ?
-                                <Link key={shop} xact="true" to={"/kody-promocyjne/" + shop}>
+                                <Link key={shop} exact="true" to={"/kody-promocyjne/" + shop} target="top" onClick={onSearch}>
                                     <li key={shop}>
                                         <img src={"./../../assets/img/search/" + shop + ".png"} alt={shop} />{shop}
                                     </li>

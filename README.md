@@ -1,8 +1,8 @@
 # alerabat.com-OLX
-Discount codes.
+alerabat.com discount codes for OLX.
 
 ## Description
-Description...
+Web App with discount codes from [alerabat.com](https://alerabat.com/). The app created for [OLX](https://www.olx.pl/) buying platform.
 
 ## Technologies
 * REACT
@@ -12,13 +12,17 @@ Description...
 * Webpack
 
 ## Futures
+Features...
 
 ## Demo
-App demo...
+https://jaroslaw91.github.io/alerabat.com-OLX/
 
 ## Install
-* clone repository
+* clone this repository
+* install packages in the main directory: `npm install`
 
 ## ToDo
-* app layout
-* CSS style
+* build Main component
+* build Top component
+* Shops component bug fix
+* Shop component bug fix

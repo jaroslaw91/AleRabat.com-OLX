@@ -99,7 +99,7 @@ const Shop = ({ token, shops }) => {
 
                                         {m.finishDate ?
                                             <p>
-                                                <i className="fas fa-clock" /> {Math.abs(Math.ceil(dateNow.getTime() - dateEnd.getTime(vouchers.finishDate) / (60 * 60 * 24 * 1000)) % 365)} dni
+                                                <i className="fas fa-clock" /> {Math.abs(Math.ceil(dateEnd.getTime(vouchers.finishDate) - dateNow.getTime() / (60 * 60 * 24 * 1000)) % 365)} dni
                                            </p>
                                             : <p><i className="fas fa-clock" /> Do odwołania</p>}
                                     </>

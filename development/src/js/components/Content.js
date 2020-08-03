@@ -9,6 +9,7 @@ import Main from "./Main";
 import Top from "./Top";
 import Shops from "./Shops";
 import Shop from "./Shop";
+import NotFound from "./NotFound";
 
 
 const Content = ({ token, shops, letters }) => {
@@ -43,6 +44,7 @@ const Content = ({ token, shops, letters }) => {
                         <Route path="/kody-promocyjne/:shop" component={() => (
                             <Shop token={token} shops={shops} />
                         )} />
+                        <Route component={NotFound} />
                     </Switch>
                 </Router>
             </div>

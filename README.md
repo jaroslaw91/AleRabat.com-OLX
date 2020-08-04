@@ -1,8 +1,8 @@
-# alerabat.com-OLX
-alerabat.com discount codes for OLX.
+# AleRabat.com-OLX
+AleRabat.com discount codes for OLX.
 
 ## Description
-Web App with discount codes from [alerabat.com](https://alerabat.com/). The app created for [OLX](https://www.olx.pl/) buying platform.
+Web App with discount codes from [AleRabat.com](https://alerabat.com/). The app created for [OLX](https://www.olx.pl/) buying platform.
 
 ## Technologies
 * REACT

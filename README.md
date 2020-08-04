@@ -15,7 +15,7 @@ Web App with discount codes from [AleRabat.com](https://alerabat.com/). The app 
 Features...
 
 ## Demo
-https://jaroslaw91.github.io/alerabat.com-OLX/
+https://jaroslaw91.github.io/AleRabat.com-OLX/
 
 ## Install
 * clone this repository

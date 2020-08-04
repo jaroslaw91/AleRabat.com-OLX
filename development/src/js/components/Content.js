@@ -24,7 +24,15 @@ const Content = ({ token, shops, letters }) => {
                 }
             })
                 .then(res => res.json())
-                .then(data => setAllVouchers(prev => [...prev, data]))
+                .then(data => {
+                    data[0] ?
+                        setAllVouchers(prev => [{
+                            ...prev,
+                            id: data[0].id,
+                            shopName: data[0].shopName
+                        }])
+                        : null
+                })
                 .catch(error => console.log(error));
         });
     }, [shops]);
@@ -34,7 +42,9 @@ const Content = ({ token, shops, letters }) => {
             <div className="content--container">
                 <Router>
                     <Switch>
-                        <Route exact path="/" component={Main} />
+                        <Route exact path="/" component={() => (
+                            <Main shops={shops} />
+                        )} />
                         <Route path="/top" component={() => (
                             <Top allVouchers={allVouchers} />
                         )} />

@@ -2,9 +2,6 @@
     width: 100vw;
     height: 72px;
     background-color: $dark-blue-color;
-    display: flex;
-    justify-content: center;
-    align-items: flex-start;
     &--container {
         margin: 0 24px;
         width: 100%;
@@ -16,9 +13,11 @@
         align-items: center;
         position: relative;
         @include notebook {
+            margin: 0 auto;
             width: 981px;
         }
         @include desktop {
+            margin: 0 auto;
             width: 1238px;
         }
         img {

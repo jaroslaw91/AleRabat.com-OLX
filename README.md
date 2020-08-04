@@ -23,6 +23,7 @@ https://jaroslaw91.github.io/AleRabat.com-OLX/
 
 ## ToDo
 * build Main component
+* add interval for Slider in Main component and bug fix
 * build Top component
 * Shops component bug fix
 * Shop component bug fix

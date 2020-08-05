@@ -3,20 +3,26 @@
     width: 100%;
     min-height: calc(100vh - 750px);
     &--container {
-        margin: 0 20px;
+        margin: 0 24px;
         width: 100%;
         @include notebook {
             margin: 0 auto;
-            width: 981px;
+            width: 1033px;
         }
         @include desktop {
             margin: 0 auto;
-            width: 1238px;
+            width: 1290px;
         }
         h2 {
             margin: 14px 0 20px 0;
             font-size: 1.714em;
             font-weight: 700;
+            @include notebook {
+                margin: 14px 26px 20px 26px;
+            }
+            @include desktop {
+                margin: 14px 26px 20px 26px;
+            }
         }
     }
 }

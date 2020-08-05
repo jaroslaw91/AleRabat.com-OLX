@@ -12,6 +12,9 @@ const Shop = ({ token, shops }) => {
     const shopName = shops.filter(f => f.name === shop);
     const shopId = shopName[0].id;
 
+    const heightVouchers = vouchers.length / 2 * 300;
+    const imgURL = `./../../assets/img/shops/${shopId}.webp`;
+
     const dateNow = new Date();
     const dateEnd = new Date();
     const monthNames = [
@@ -28,8 +31,6 @@ const Shop = ({ token, shops }) => {
         "Listopadf",
         "Grudzień"
     ];
-
-    const imgURL = `./../../assets/img/shops/${shopId}.webp`;
 
     useEffect(() => {
         if (token) {
@@ -82,7 +83,7 @@ const Shop = ({ token, shops }) => {
                     </ul>
                 </div>
 
-                <div className="vouchers">
+                <div className="vouchers" style={{ height: heightVouchers }}>
                     {vouchers.length ?
                         vouchers?.map(m => (
                             <article key={m.id} className="vouchers--voucher">
@@ -91,8 +92,8 @@ const Shop = ({ token, shops }) => {
                                 </div>
                                 <div className="vouchers--voucher__time">
                                     <>
-                                        {m.offerTypeName === "offer"
-                                            ? <p>Promocja</p>
+                                        {m.offerTypeName === "offer" ?
+                                            <p>Promocja</p>
                                             : m.offerTypeName === "discount code"
                                                 ? <p>Kod rabatowy</p>
                                                 : <p>Darmowa wysyłka</p>}

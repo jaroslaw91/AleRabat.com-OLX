@@ -1,34 +1,34 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import {
     HashRouter as Router,
     NavLink
 } from "react-router-dom";
 
 const Main = ({ shops }) => {
-    const [slider, setSlider] = useState({
-        prev: 0,
-        next: 0
-    })
+    const [slider, setSlider] = useState(0)
+
+    useEffect(() => {
+        const interval = setInterval(() => {
+            setSlider(prev => prev - 158);
+            if (slider === -1106) {
+                setSlider(790);
+            }
+        }, 5000);
+        return () => clearInterval(interval);
+    }, [slider]);
 
     const onPrev = () => {
-        slider.next === 0 ?
-            setSlider({
-                next: slider.next,
-            })
-            : setSlider({
-                next: slider.next + 158
-            })
+        slider === 790 ?
+            setSlider(slider)
+            : setSlider(prev => prev + 158)
     }
 
     const onNext = () => {
-        slider.next === -948 ?
-            setSlider({
-                next: slider.next,
-            })
-            : setSlider({
-                next: slider.next - 158
-            })
+        slider === -1106 ?
+            setSlider(slider)
+            : setSlider(prev => prev - 158)
     }
+    console.log(slider);
 
     return (
         <>
@@ -46,7 +46,7 @@ const Main = ({ shops }) => {
                     </div>
                     <div />
                 </div>
-                <div className="shops-list--container" style={{ left: slider.next }}>
+                <div className="shops-list--container" style={{ left: slider }}>
                     <ul>
                         <Router>
                             {shops?.map(m => (

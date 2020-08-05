@@ -20,6 +20,8 @@ https://jaroslaw91.github.io/AleRabat.com-OLX/
 ## Install
 * clone this repository
 * install packages in the main directory: `npm install`
+* run JSON Server: `json-server --watch development/src/database/db.json -p 3005`
+* run App: `npm start`
 
 ## ToDo
 * build Main component

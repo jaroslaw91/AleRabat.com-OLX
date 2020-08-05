@@ -9,7 +9,8 @@
         display: none;
     }
     span {
-        margin: 0 26px 15px 26px;
+        margin-right: 52px;
+        margin-bottom: 15px;
         padding-bottom: 5px;
         width: 40px;
         height: 41px;
@@ -21,6 +22,12 @@
         display: flex;
         justify-content: center;
         align-items: center;
+        @include notebook {
+            margin: 0 26px 15px 26px;
+        }
+        @include desktop {
+            margin: 0 26px 15px 26px;
+        }
         &:hover {
             cursor: pointer;
             background-color: $custom-blue-color;
@@ -32,6 +39,12 @@
 }
 .shops--box {
     padding: 9px 0;
+    @include notebook {
+        margin: 0 26px;
+    }
+    @include desktop {
+        margin: 0 26px;
+    }
     &::before {
         content: "";
         width: 100%;
@@ -81,4 +94,3 @@
         }
     }
 }
-

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import {
     HashRouter as Router,
     NavLink
@@ -6,18 +6,30 @@ import {
 import { Link } from "react-scroll";
 
 const Shops = ({ letters, shops }) => {
+    const [letter, setLetter] = useState([]);
+    const sortLetter = [...new Set(letter)];
+
+    useEffect(() => {
+        letters?.map(e => (
+            shops?.filter(f => f.name.charAt(0).toUpperCase() === e.name || e.name.charAt(0) === "0")
+                .map(m => (
+                    setLetter(prev => [...prev, e])
+                ))
+        ));
+    }, [letters]);
+
     return (
         <>
             <h2>Wszystkie sklepy</h2>
             <div className="shops--sort">
-                {letters?.map(e =>
+                {sortLetter?.map(e => (
                     <Link key={e.id} to={"/sklepy/" + e.name} spy={true} smooth={true} offset={- 100} duration={500}>
                         <span>{e.name}</span>
                     </Link>
-                )}
+                ))}
             </div>
 
-            {letters?.map(e => (
+            {sortLetter?.map(e => (
                 e.name.charAt(0) === "0" ?
                     <div key={e.id} className="shops--box" id={"/sklepy/" + e.name}>
                         <h3>{e.name}</h3>

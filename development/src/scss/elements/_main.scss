@@ -56,12 +56,12 @@
         }
     }
     &--container {
-        // left: 0;
         right: 0;
         width: 100vw;
         height: 80px;
         position: absolute;
         ul {
+            padding-left: 328px;
             display: flex;
             justify-content: center;
             align-items: center;

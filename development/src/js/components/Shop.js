@@ -1,50 +1,13 @@
-import React, { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import React from "react";
 import {
     HashRouter as Router,
-    NavLink
+    NavLink,
+    useParams
 } from "react-router-dom";
 
-const Shop = ({ token, shops }) => {
+const Shop = ({ shops, allVouchers, monthNames, dateNow }) => {
+
     const { shop } = useParams();
-    const [vouchers, setVouchers] = useState([]);
-
-    const shopName = shops.filter(f => f.name === shop);
-    const shopId = shopName[0].id;
-
-    const heightVouchers = vouchers.length / 2 * 300;
-    const imgURL = `./../../assets/img/shops/${shopId}.webp`;
-
-    const dateNow = new Date();
-    const dateEnd = new Date();
-    const monthNames = [
-        "Styczeń",
-        "Luty",
-        "Marzec",
-        "Kwiecień",
-        "Maj",
-        "Czerwiec",
-        "Lipiec",
-        "Sierpień",
-        "Wrzesień",
-        "Październik",
-        "Listopadf",
-        "Grudzień"
-    ];
-
-    useEffect(() => {
-        if (token) {
-            fetch(process.env.DB_HOST + "shops/" + shopId + "/vouchers", {
-                headers: {
-                    "Authorization": "Bearer " + token,
-                    "Content-Type": "application/json"
-                }
-            })
-                .then(res => res.json())
-                .then(vouchers => setVouchers(vouchers))
-                .catch(error => console.log(error));
-        }
-    }, [shop]);
 
     return (
         <>
@@ -52,7 +15,7 @@ const Shop = ({ token, shops }) => {
             <div className="shop">
                 <div className="shop--info">
                     <div className="shop--info__logo">
-                        <img src={imgURL} alt={shop} />
+                        <img src={"./../../assets/img/shops/" + shop + ".webp"} alt={shop} />
                     </div>
                     <h3>{shop}</h3>
                     <h3>Zobacz także kupony rabatowe i promocje w najpopularniejszych sklepach</h3>
@@ -62,12 +25,11 @@ const Shop = ({ token, shops }) => {
                                 {shops?.map(m => (
                                     <NavLink key={m.id} exact to={"/kody-promocyjne/" + m.name}>
                                         <li key={m.id}>
-                                            <img src={"./../../assets/img/shops/" + m.id + ".webp"} alt={shop} />
+                                            <img src={"./../../assets/img/shops/" + m.name + ".webp"} alt={m.name} />
                                         </li>
                                     </NavLink>
                                 ))}
                             </Router>
-
                         </ul>
                     </div>
                     <h3>Zobacz także kupony rabatowe i promocje w podobnych sklepach</h3>
@@ -83,14 +45,20 @@ const Shop = ({ token, shops }) => {
                     </ul>
                 </div>
 
-                <div className="vouchers" style={{ height: heightVouchers }}>
-                    {vouchers.length ?
-                        vouchers?.map(m => (
-                            <article key={m.id} className="vouchers--voucher">
-                                <div className="vouchers--voucher__logo">
-                                    <img src={imgURL} alt={shop} />
+
+                <div className="vouchers">
+                    {allVouchers?.filter(f => f.shopName === shop)
+                        .map(m => (
+                            <article key={m.id} className="vouchers--coupon">
+                                <div className="vouchers--coupon__logo">
+                                    <Router>
+                                        <NavLink to={"/kody-promocyjne/" + m.shopName}>
+                                            <img src={"./../../assets/img/shops/" + m.shopName + ".webp"} alt={m.shopName} />
+                                        </NavLink>
+                                    </Router>
+
                                 </div>
-                                <div className="vouchers--voucher__time">
+                                <div className="vouchers--coupon__time">
                                     <>
                                         {m.offerTypeName === "offer" ?
                                             <p>Promocja</p>
@@ -100,16 +68,55 @@ const Shop = ({ token, shops }) => {
 
                                         {m.finishDate ?
                                             <p>
-                                                <i className="fas fa-clock" /> {Math.abs(Math.ceil(dateEnd.getTime(vouchers.finishDate) - dateNow.getTime() / (60 * 60 * 24 * 1000)) % 365)} dni
+                                                <i className="fas fa-clock" /> {Math.abs(Math.ceil(dateNow.getTime(m.finishDate) - dateNow.getTime() / (60 * 60 * 24 * 1000)) % 365)} dni
+                                    </p>
+                                            : <p><i className="fas fa-clock" /> Do odwołania</p>}
+                                    </>
+                                </div>
+                                <div className="vouchers--coupon__info">
+                                    <h3>{m.title}</h3>
+                                    <p>{m.description}</p>
+                                </div>
+                                <div className="vouchers--coupon__btn">
+                                    {m.code ?
+                                        <a href={m.directLink}>Pokaż kod</a>
+                                        : <a href={m.directLink} target="blank">Przejdź do promocji</a>}
+                                    <span>
+                                        <i className="fas fa-heart" />
+                                    </span>
+                                </div>
+                            </article >
+                        ))}
+                </div>
+
+
+                {/* <div className="vouchers" >
+                    {vouchers.length ?
+                        vouchers?.map(m => (
+                            <article key={m.id} className="vouchers--coupon">
+                                <div className="vouchers--coupon__logo">
+                                    <img src={imgURL} alt={shop} />
+                                </div>
+                                <div className="vouchers--coupon__time">
+                                    <>
+                                        {m.offerTypeName === "offer" ?
+                                            <p>Promocja</p>
+                                            : m.offerTypeName === "discount code"
+                                                ? <p>Kod rabatowy</p>
+                                                : <p>Darmowa wysyłka</p>}
+
+                                        {m.finishDate ?
+                                            <p>
+                                                <i className="fas fa-clock" /> {Math.abs(Math.ceil(dateNow.getTime(m.finishDate) - dateNow.getTime() / (60 * 60 * 24 * 1000)) % 365)} dni
                                            </p>
                                             : <p><i className="fas fa-clock" /> Do odwołania</p>}
                                     </>
                                 </div>
-                                <div className="vouchers--voucher__info">
+                                <div className="vouchers--coupon__info">
                                     <h3>{m.title}</h3>
                                     <p>{m.description}</p>
                                 </div>
-                                <div className="vouchers--voucher__btn">
+                                <div className="vouchers--coupon__btn">
                                     {m.code ? <a href={m.directLink}>Pokaż kod</a> : <a href={m.directLink} target="blank">Przejdź do promocji</a>}
                                     <span><i className="fas fa-heart"></i></span>
                                 </div>
@@ -117,7 +124,7 @@ const Shop = ({ token, shops }) => {
                         ))
                         : <p className="no-coupons">W tej chwili brak kuponów dla tego sklepu :(</p>
                     }
-                </div>
+                </div> */}
             </div>
         </>
     );

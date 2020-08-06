@@ -4,7 +4,8 @@ import {
     Link
 } from "react-router-dom";
 
-const Searching = ({ shops }) => {
+const Search = ({ shops }) => {
+
     const [shopList, setShopList] = useState([]);
     const [searchValue, setSearchValue] = useState([]);
     const [searchShop, setSearchShop] = useState([]);
@@ -52,4 +53,4 @@ const Searching = ({ shops }) => {
     );
 }
 
-export default Searching;
+export default Search;

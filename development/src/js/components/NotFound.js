@@ -5,6 +5,7 @@ import {
 } from "react-router-dom";
 
 const NotFound = () => {
+
     return (
         <div className="not-found">
             <img src="./../../assets/img/404.png" alt="Nie znaleziono strony" />

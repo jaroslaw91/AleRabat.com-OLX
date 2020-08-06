@@ -1,14 +1,11 @@
 import React from "react";
 
-const Heading = ({ shops }) => {
+const Heading = ({ allVouchers }) => {
 
     return (
         <div className="heading">
             <h2 className="heading--text">
-                {shops.length ?
-                    shops.length + " sklepów z kuponami rabatowymi w jednym miejscu"
-                    : "Ładowanie..."
-                }
+                {allVouchers.length + " kodów rabatowych i promocji w jednym miejscu"}
             </h2>
         </div>
     );

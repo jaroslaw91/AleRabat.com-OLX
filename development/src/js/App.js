@@ -4,6 +4,7 @@ import {
     HashRouter as Router,
     Switch,
     Route,
+    useLocation
 } from "react-router-dom";
 import "./../scss/main.scss";
 import Headers from "./components/Header";
@@ -21,7 +22,7 @@ const App = () => {
         letters: [],
         shops: [],
     });
-    const [vouchers, setVouchers] = useState([]);
+    const [allVouchers, setAllVouchers] = useState([]);
 
     useEffect(() => {
         fetchToken();
@@ -77,13 +78,24 @@ const App = () => {
             .catch(error => console.log(error));
     }
 
+    const getHeading = () => {
+        const { pathname } = useLocation();
+        return (
+            <Heading allVouchers={allVouchers} />
+        )
+    };
+
     return (
         <>
             <Headers />
-            <Heading shops={state.shops} />
+            <Router>
+                <Switch>
+                    <Route exact path="/" component={getHeading} />
+                </Switch>
+            </Router>
             <Search shops={state.shops} />
             <Nav DB_URL={DB_URL} />
-            <Content token={state.token} shops={state.shops} letters={state.letters} />
+            <Content token={state.token} shops={state.shops} letters={state.letters} allVouchers={allVouchers} setAllVouchers={setAllVouchers} />
             <Footer DB_URL={DB_URL} />
         </>
     );

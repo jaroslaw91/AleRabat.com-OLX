@@ -19,8 +19,8 @@ const Nav = ({ DB_URL }) => {
             <div className="navigation--mobile">
                 <nav>
                     <select>
-                        {nav?.map(e => (
-                            <option key={e.id}>{e.name}</option>
+                        {nav?.map(m => (
+                            <option key={m.id}>{m.name}</option>
                         ))}
                     </select>
                 </nav>
@@ -29,9 +29,9 @@ const Nav = ({ DB_URL }) => {
                 <nav>
                     <ul>
                         <Router>
-                            {nav?.map(e => (
-                                <NavLink key={e.id} exact to={e.url} activeClassName="nav-active">
-                                    <li className="nav-disabled">{e.name}</li>
+                            {nav?.map(m => (
+                                <NavLink key={m.id} exact to={m.url} activeClassName="nav-active">
+                                    <li className="nav-disabled">{m.name}</li>
                                 </NavLink>
                             ))}
                         </Router>

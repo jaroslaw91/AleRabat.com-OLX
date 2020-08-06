@@ -6,6 +6,7 @@ import {
 import { Link } from "react-scroll";
 
 const Shops = ({ letters, shops }) => {
+
     const [letter, setLetter] = useState([]);
     const sortLetter = [...new Set(letter)];
 
@@ -21,7 +22,7 @@ const Shops = ({ letters, shops }) => {
     return (
         <>
             <h2>Wszystkie sklepy</h2>
-            <div className="shops--sort">
+            <div className="shops--letters">
                 {sortLetter?.map(e => (
                     <Link key={e.id} to={"/sklepy/" + e.name} spy={true} smooth={true} offset={- 100} duration={500}>
                         <span>{e.name}</span>

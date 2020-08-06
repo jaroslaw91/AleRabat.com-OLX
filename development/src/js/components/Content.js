@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useEffect } from "react";
 import {
     HashRouter as Router,
     Switch,
@@ -11,9 +11,23 @@ import Shops from "./Shops";
 import Shop from "./Shop";
 import NotFound from "./NotFound";
 
+const Content = ({ token, shops, letters, allVouchers, setAllVouchers }) => {
 
-const Content = ({ token, shops, letters }) => {
-    const [allVouchers, setAllVouchers] = useState([]);
+    const dateNow = new Date();
+    const monthNames = [
+        "Styczeń",
+        "Luty",
+        "Marzec",
+        "Kwiecień",
+        "Maj",
+        "Czerwiec",
+        "Lipiec",
+        "Sierpień",
+        "Wrzesień",
+        "Październik",
+        "Listopadf",
+        "Grudzień"
+    ];
 
     useEffect(() => {
         shops.map(m => {
@@ -25,17 +39,17 @@ const Content = ({ token, shops, letters }) => {
             })
                 .then(res => res.json())
                 .then(data => {
-                    data[0] ?
-                        setAllVouchers(prev => [{
-                            ...prev,
-                            id: data[0].id,
-                            shopName: data[0].shopName
-                        }])
-                        : null
+                    for (let i = 0; i <= data.length; i++) {
+                        if (data[i] !== undefined) {
+                            setAllVouchers(prev => [...prev, data[i]])
+                        }
+                    }
                 })
                 .catch(error => console.log(error));
         });
     }, [shops]);
+
+    console.log(allVouchers);
 
     return shops.length ? (
         <div className="content">
@@ -43,7 +57,7 @@ const Content = ({ token, shops, letters }) => {
                 <Router>
                     <Switch>
                         <Route exact path="/" component={() => (
-                            <Main shops={shops} />
+                            <Main shops={shops} allVouchers={allVouchers} dateNow={dateNow} />
                         )} />
                         <Route path="/top" component={() => (
                             <Top allVouchers={allVouchers} />
@@ -52,7 +66,7 @@ const Content = ({ token, shops, letters }) => {
                             <Shops letters={letters} shops={shops} />
                         )} />
                         <Route path="/kody-promocyjne/:shop" component={() => (
-                            <Shop token={token} shops={shops} />
+                            <Shop token={token} shops={shops} allVouchers={allVouchers} monthNames={monthNames} dateNow={dateNow} />
                         )} />
                         <Route component={NotFound} />
                     </Switch>

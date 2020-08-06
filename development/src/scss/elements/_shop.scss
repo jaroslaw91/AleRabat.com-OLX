@@ -2,11 +2,8 @@
     width: 100%;
     display: flex;
     align-content: flex-start;
-    @include desktop {
-        margin: 0 26px;
-    }
     &--info {         
-     margin-right: 10px;
+     margin-right: 20px;
      width: calc(33.3% - 10px);
         &__logo {
         width: 100%;
@@ -34,7 +31,7 @@
                     margin: 20px 0;
                     width: 100%;
                     height: 1px;
-                    background-color: $tranparent-gray-color-hr;
+                    background-color: $color-10;
                     display: block;
                 }
             }
@@ -52,10 +49,10 @@
                     padding: 10px 20px;
                     width: 188px;
                     height: 58px;
-                    color: $custom-gray-color;
+                    color: $color-6;
                     font-size: 0.857em;
                     text-align: center;
-                    border: 1px solid $tranparent-gray-color;
+                    border: 1px solid $color-8;
                     border-radius: 4px;
                     &:hover {
                         text-decoration: underline;
@@ -69,9 +66,9 @@
         &__shops-list {
             margin-bottom: 5px;
             padding: 12px 13px;
-            color: $custom-gray-color;
+            color: $color-6;
             font-size: 0.857em;
-            border: 1px solid $tranparent-gray-color;
+            border: 1px solid $color-8;
             border-radius: 4px;
             &:hover {
                 text-decoration: underline;
@@ -79,116 +76,21 @@
         }
     }
     .vouchers {
-        width: 66.6%;
-        height: 200px;
-        display: flex;
-        justify-content: space-between;
-        align-items: stretch;
-        flex-wrap: wrap;
-        @include mobile {
-            padding-right: 36px;
-            width: 100%;
-            justify-content: center;
-        }
-        @include tablet {
-            padding-right: 36px;
-            width: 100%;
-            justify-content: center;
-        }
-        @include notebook {
-            padding-left: 12px;
-            padding-right: 17px;
-            width: 100%;
-            justify-content: center;
-        }
+        width: 100%;
+        height: 100%;
         @include desktop {
-            margin-right: 45px;
+            width: 66.6%;
         }
-        .vouchers--voucher {
-            margin: 0 10px;
-            margin-bottom: 20px;
-            width: calc(50% - 20px);
-            min-height: 300px;
-            background-color: $custom-white-color;
-            border: 1px solid $tranparent-gray-color;
-            border-radius: 6px;
-            display: flex;
-            justify-content: flex-start;
-            align-items: flex-start;
-            flex-direction: column;
-            @include mobile {
-                margin-left: 0;
-                width: 100%;
-            }
+        &--coupon {
             @include tablet {
-                margin-left: 0;
                 width: 100%;
             }
-            &__logo {
-                padding: 30px;
-                width: 100%;
-                border-bottom: 1px solid $tranparent-gray-color;
-                display: flex;
-                justify-content: center;
-                align-items: center;
+            @include notebook {
+                width: calc(50% - 10px);
             }
-            &__time {
-                padding: 13px 20px;
-                width: 100%;
-                color: $custom-gray-color;
-                font-weight: 800;
-                display: flex;
-                justify-content: space-between;
-                align-content: center;
-            }
-            &__info {
-                padding: 0 20px;
-                width: 100%;
-                h3 {
-                    font-size: 1em;  
-                    font-weight: 600;
-                }
-                p {
-                    margin: 13px 0 8px 0;
-                    font-size: 0.857em;
-                    font-weight: 400;
-                }
-            }
-            &__btn {
-                padding: 20px 20px;
-                width: 100%;
-                font-size: 1em;
-                font-weight: 600;
-                display: flex;
-                justify-content: space-between;
-                align-content: center;
-                a {
-                    margin-right: 10px;
-                    padding: 12px 18px;
-                    width: 100%;
-                    height: 40px;
-                    background-color: $custom-blue-color;
-                    color: $custom-white-color;
-                    text-align: center;
-                    border-radius: 4px;         
-                }
-                span {
-                    padding: 12px 18px;
-                    height: 40px;
-                    background-color: $dark-white-color;
-                    font-size: 1.5em;
-                    color: $custom-gray-color;
-                    text-align: center;
-                    border-radius: 4px;
-                    display: flex;
-                    justify-content: center;
-                    align-items: center;
-                    &:hover {
-                        cursor: pointer;
-                        background-color: $custom-blue-color;
-                        color: $custom-white-color;
-                    }
-                }
+            @include desktop {
+                margin-bottom: 20px;
+                 width: calc(50% - 10px);
             }
         }
         .no-coupons {

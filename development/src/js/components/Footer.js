@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 
 const Footer = ({ DB_URL }) => {
+
     const [footerLinks, setFooterLinks] = useState([]);
 
     useEffect(() => {
@@ -15,18 +16,18 @@ const Footer = ({ DB_URL }) => {
             <div className="footer--container">
                 <div className="footer--container__box">
                     <ul>
-                        {footerLinks.part1?.map(e => (
-                            <li key={e.id}>
-                                <a href={e.url}>{e.name}</a>
+                        {footerLinks.part1?.map(m => (
+                            <li key={m.id}>
+                                <a href={m.url}>{m.name}</a>
                             </li>
                         ))}
                     </ul>
                 </div>
                 <div className="footer--container__box">
                     <ul>
-                        {footerLinks.part2?.map(e => (
-                            <li key={e.id}>
-                                <a href={e.url}>{e.name}</a>
+                        {footerLinks.part2?.map(m => (
+                            <li key={m.id}>
+                                <a href={m.url}>{m.name}</a>
                             </li>
                         ))}
                     </ul>
@@ -34,17 +35,21 @@ const Footer = ({ DB_URL }) => {
                 <div className="footer--container__box">
                     <p>Śledź nas na</p>
                     <ul>
-                        {footerLinks.social?.map(e => (
-                            <li key={e.id}>
-                                <a href={e.url} target="_blank"><i className={e.class} /></a>
+                        {footerLinks.social?.map(m => (
+                            <li key={m.id}>
+                                <a href={m.url} target="_blank">
+                                    <i className={m.class} />
+                                </a>
                             </li>
                         ))}
                     </ul>
                     <p>Pobierz aplikację mobilną</p>
                     <ul>
-                        {footerLinks.mobileapp?.map(e => (
-                            <li key={e.id}>
-                                <a href={e.url} target="_blank"><img src={e.img} /></a>
+                        {footerLinks.mobileapp?.map(m => (
+                            <li key={m.id}>
+                                <a href={m.url} target="_blank">
+                                    <img src={m.img} />
+                                </a>
                             </li>
                         ))}
                     </ul>

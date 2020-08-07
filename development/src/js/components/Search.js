@@ -32,14 +32,14 @@ const Search = ({ shops }) => {
         <div className="search">
             <form className="search--form">
                 <button type="submit">
-                    <i className="fas fa-search"></i>
+                    <i className="fas fa-search" />
                 </button>
                 <input id="input" type="text" placeholder="np. eobuwie, Media Markt, adidas" value={searchValue} onChange={handleOfSearch} />
                 <ul>
                     <Router>
                         {searchShop.map(shop => (
                             searchValue ?
-                                <Link key={shop} exact="true" to={"/kody-promocyjne/" + shop} target="top" onClick={onSearch}>
+                                <Link key={shop} exact="true" to={"/kody-promocyjne/" + shop} onClick={onSearch}>
                                     <li key={shop}>
                                         <img src={"./../../assets/img/search/" + shop + ".png"} alt={shop} />{shop}
                                     </li>

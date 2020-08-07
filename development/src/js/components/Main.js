@@ -14,7 +14,7 @@ const Main = ({ shops, allVouchers, dateNow }) => {
             if (slider === -948) {
                 setSlider(948);
             }
-        }, 1000);
+        }, 5000);
         return () => clearInterval(interval);
     }, [slider]);
 
@@ -115,6 +115,12 @@ const Main = ({ shops, allVouchers, dateNow }) => {
                     <img src="./../../../assets/img/olx_info.png" />
                 </div>
                 <div className="info--text">
+                    <h3>Najlepsze okazje w internecie</h3>
+                    <p>Na serwisie znajdziesz najciekawsze promocje oraz rabaty, dzięki którym Twoje zakupy będą jeszcze tańsze. Korzystaj z atrakcyjnych okazji do różnych sklepów internetowych i kupuj bez wychodzenia z domu!</p>
+                    <h3>Promocje, obniżki, rabaty</h3>
+                    <p>Wszystkie najlepsze okazje, wyprzedaże i rabaty w jednym miejscu! Oszczędzaj na swoich zakupach, dzięki aktualnym kuponom rabatowym oraz zniżkom do wielu sklepów. Oferujemy Ci setki rabatów na różne produkty, z których możesz skorzystać w dowolnej chwili!</p>
+                    <h3>Aktualna i sprawdzona oferta</h3>
+                    <p>Na naszym serwisie publikujemy zawsze aktualne i najlepsze okazje. Wszystkie oferty są regularnie sprawdzane, tak abyś mógł zawsze znaleźć najnowsze rabaty na ulubione produkty i usługi. A co najważniejsze, wszystkie kupony udostępniamy za damo!</p>
                 </div>
             </div>
         </>

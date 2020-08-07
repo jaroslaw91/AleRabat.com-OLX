@@ -49,9 +49,7 @@ const Content = ({ token, shops, letters, allVouchers, setAllVouchers }) => {
         });
     }, [shops]);
 
-    console.log(allVouchers);
-
-    return shops.length ? (
+    return shops.length && allVouchers.length ? (
         <div className="content">
             <div className="content--container">
                 <Router>
@@ -60,7 +58,7 @@ const Content = ({ token, shops, letters, allVouchers, setAllVouchers }) => {
                             <Main shops={shops} allVouchers={allVouchers} dateNow={dateNow} />
                         )} />
                         <Route path="/top" component={() => (
-                            <Top allVouchers={allVouchers} />
+                            <Top allVouchers={allVouchers} dateNow={dateNow} />
                         )} />
                         <Route path="/sklepy" component={() => (
                             <Shops letters={letters} shops={shops} />

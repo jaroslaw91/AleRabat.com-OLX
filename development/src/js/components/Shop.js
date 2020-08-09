@@ -6,7 +6,7 @@ import {
 } from "react-router-dom";
 import Clipboard from 'react-clipboard.js';
 
-const Shop = ({ shops, allVouchers, monthNames }) => {
+const Shop = ({ shops, allVouchers, monthNames, dateNow }) => {
 
     const { shop } = useParams();
     const [code, setCode] = useState(false);

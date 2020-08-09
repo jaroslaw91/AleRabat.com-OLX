@@ -5,7 +5,7 @@ import {
 } from "react-router-dom";
 import Clipboard from 'react-clipboard.js';
 
-const Top = ({ allVouchers }) => {
+const Top = ({ allVouchers, dateNow }) => {
 
     const [top, setTop] = useState([]);
     const [code, setCode] = useState(false);

@@ -13,7 +13,6 @@ import NotFound from "./NotFound";
 
 const Content = ({ token, shops, letters, allVouchers, setAllVouchers }) => {
 
-    const dateNow = new Date();
     const monthNames = [
         "Styczeń",
         "Luty",
@@ -55,16 +54,16 @@ const Content = ({ token, shops, letters, allVouchers, setAllVouchers }) => {
                 <Router>
                     <Switch>
                         <Route exact path="/" component={() => (
-                            <Main shops={shops} allVouchers={allVouchers} dateNow={dateNow} />
+                            <Main shops={shops} allVouchers={allVouchers} />
                         )} />
                         <Route path="/top" component={() => (
-                            <Top allVouchers={allVouchers} dateNow={dateNow} />
+                            <Top allVouchers={allVouchers} />
                         )} />
                         <Route path="/sklepy" component={() => (
                             <Shops letters={letters} shops={shops} />
                         )} />
                         <Route path="/kody-promocyjne/:shop" component={() => (
-                            <Shop token={token} shops={shops} allVouchers={allVouchers} monthNames={monthNames} dateNow={dateNow} />
+                            <Shop token={token} shops={shops} allVouchers={allVouchers} monthNames={monthNames} />
                         )} />
                         <Route component={NotFound} />
                     </Switch>

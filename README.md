@@ -12,7 +12,11 @@ Web App with discount codes from [AleRabat.com](https://alerabat.com/). The app 
 * Webpack
 
 ## Futures
-Features...
+* The Main section displays all the coupons
+* The Top section displays 20 random coupons
+* The Shops section shows the available shops and sorts them
+* The Shop section displays the store information and available coupons
+* The Search section displays shop suggestions
 
 ## Demo
 https://jaroslaw91.github.io/AleRabat.com-OLX/
@@ -24,6 +28,8 @@ https://jaroslaw91.github.io/AleRabat.com-OLX/
 * run App: `npm start`
 
 ## ToDo
-* build Main component
-* add interval for Slider in Main component and bug fix
-* build Top component
+* Build a mobile menu
+* Coupons style correct and RWD mobile version
+* Submit a Search form submission
+* Rebuild a Slider 
+* Optimize the code

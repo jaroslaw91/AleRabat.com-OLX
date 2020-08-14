@@ -154,8 +154,6 @@ const Shop = ({ shops, allVouchers, monthNames, dateNow }) => {
                                                 <span className="info-like">
                                                     <i className="fas fa-heart" /> 30
                                                 </span>
-
-
                                             </div>
                                         </div>
                                     </div>

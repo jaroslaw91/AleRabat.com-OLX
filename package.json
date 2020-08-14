@@ -24,11 +24,9 @@
     "dependencies": {
         "dotenv": "^8.2.0",
         "react": "^16.11.0",
-        "react-clipboard.js": "^2.0.16",
         "react-dom": "^16.11.0",
         "react-router-dom": "^5.2.0",
-        "react-scroll": "^1.8.0",
-        "react-search-box": "^2.0.2",
+        "react-router-hash-link": "^2.0.0",
         "whatwg-fetch": "^3.2.0"
     }
 }

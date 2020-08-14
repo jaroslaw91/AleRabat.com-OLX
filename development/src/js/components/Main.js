@@ -189,7 +189,7 @@ const Main = ({ shops, allVouchers, dateNow }) => {
             </div>
             <div className="info">
                 <div className="info--img">
-                    <img src="./../../../assets/img/olx_info.png" />
+                    <img src="./../../assets/img/olx_info.png" />
                 </div>
                 <div className="info--text">
                     <h3>Najlepsze okazje w internecie</h3>

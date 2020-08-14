@@ -116,12 +116,12 @@
         "mobileapp": [
             {
                 "id": 1,
-                "img": "./assets/img/app-store-badge.png",
+                "img": "./development/assets/img/app-store-badge.png",
                 "url": "https://apps.apple.com/pl/app/olx-pl-darmowe-og-oszenia/id531717763?l=pl&ls=1"
             },
             {
                 "id": 2,
-                "img": "./assets/img/google-play-badge.png",
+                "img": "./development/assets/img/google-play-badge.png",
                 "url": "https://play.google.com/store/apps/details?id=pl.tablica&referrer=utm_source%3Dolx.pl%26utm_medium%3Dcpc%26utm_campaign%3Dandroid-app-footer"
             }
         ]

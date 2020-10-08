@@ -1,3 +1,5 @@
+[ not finished ]
+
 # AleRabat.com-OLX
 AleRabat.com discount codes for OLX.
 
@@ -19,7 +21,7 @@ Web App with discount codes from [AleRabat.com](https://alerabat.com/). The app 
 * The Search section displays shop suggestions
 
 ## Demo
-https://jaroslaw91.github.io/AleRabat.com-OLX/
+Go to https://jaroslaw91.github.io/AleRabat.com-OLX/
 
 ## Install
 * clone this repository

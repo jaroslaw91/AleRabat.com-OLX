@@ -7,10 +7,13 @@ AleRabat.com discount codes for OLX.
 Web App with discount codes from [AleRabat.com](https://alerabat.com/). The app created for [OLX](https://www.olx.pl/) buying platform.
 
 ## Technologies
-* REACT
+* react
+* react-router
+* dotenv
 * ES6
 * JSON
 * CSS, Sass
+* Babel
 * Webpack
 
 ## Futures
